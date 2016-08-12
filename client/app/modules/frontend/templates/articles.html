@@ -1,0 +1,68 @@
+<main class="articles-main" id="articles-main">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="mdl-color--white content mdl-color-text--grey-800 mdl-cell mdl-cell--10-col page-wrap">
+            <md-divider style="margin-top:10px;margin-bottom:10px;" ng-if="!articles.loading"></md-divider>
+              <div layout="row" layout-align="center center" ng-if="articles.loading">
+                <md-whiteframe class="md-whiteframe-11dp center-progress-bar" flex-sm="65" flex-gt-sm="55" flex-gt-md="45">
+                  <md-progress-linear md-mode="indeterminate"></md-progress-circular>
+                </md-whiteframe>
+              </div>
+              <div class="row" ng-if="!articles.loading">
+                <div class="col s12 m6 l4 repeat-modify" ng-repeat="article in articles.items track by $id(article)">
+                  <div class="card medium hoverable">
+                    <div class="card-image">
+                      <img class="responsive-img grow" data-ng-src="{{article.imageLink}}">
+                        <a href="#!/articles/item/{{article.$id}}">
+                          <span class="card-title underline headline-font">{{article.headline}}</span>
+                        </a>
+                      <div layout="row" class="card-title headline-font-background"></div>
+                    </div>
+                    <div class="card-content">
+                      <p>{{article.content | limitTo: 200}} ...</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#!/articles/item/{{article.$id}}">Read</a>
+                      <span style="float:right;">{{article.publisher}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ng-if="!articles.loading">
+                <md-divider></md-divider>
+                <div layout="row" layout-align="center center">
+                  <ul ng-if="articles.pager.pages.length" class="pagination">
+                    <li class="waves-effect" ng-class="{disabled:articles.pager.currentPage === 1}">
+                        <a ng-click="articles.setPage(1)">First</a>
+                    </li>
+                    <li class="waves-effect" ng-class="{disabled:articles.pager.currentPage === 1}">
+                        <a ng-click="articles.setPage(articles.pager.currentPage - 1)"><i class="material-icons">chevron_left</i>Forward</a>
+                    </li>
+                    <li class="waves-effect" ng-class="{disabled:articles.pager.currentPage === articles.pager.totalPages}">
+                        <a ng-click="articles.setPage(articles.pager.currentPage + 1)">Back<i class="material-icons">chevron_right</i></a>
+                    </li>
+                    <li class="waves-effect" ng-class="{disabled:articles.pager.currentPage === articles.pager.totalPages}">
+                        <a ng-click="articles.setPage(articles.pager.totalPages)">Last</a>
+                    </li>
+                  </ul>
+                </div>
+                <md-divider></md-divider>
+              </div>
+          </div>
+        </div>
+        <footer class="page-footer site-footer" style="background-color:#6C7A89;" ng-if="!articles.loading">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">NodeJS / AngularJS / Material</h5>
+                <p class="grey-text text-lighten-4">Demo resource for headlines presentation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 HEADliner
+            </div>
+          </div>
+        </footer>
+</main>

@@ -1,0 +1,9 @@
+{
+  "generator-angm": {
+    "appName": "headliner",
+    "angularCookies": true,
+    "angularAnimate": true,
+    "angularSanitize": true,
+    "angularMaterial": true
+  }
+}

@@ -1,0 +1,52 @@
+<div class="md-padding" flex layout-sm="column">     
+	<md-whiteframe class="md-whiteframe-11dp center-progress-bar" flex-sm="65" flex-gt-sm="55" flex-gt-md="45" layout layout-align="center center" ng-if="dashboard.loading">
+		<md-progress-linear md-mode="indeterminate"></md-progress-circular>
+	</md-whiteframe>
+    <md-card ng-if="!dashboard.loading" class="text-center">
+        <md-card-content>
+        <section class="mdl-grid" id="articles-table">
+		  <div class="mdl-layout-spacer"></div>
+		  <div class="mdl-cell mdl-cell--6-col-tablet mdl-cell--10-col-desktop mdl-cell--stretch">
+		  		<table id="dashboard-table" class="mdl-data-table md-whiteframe-8dp">
+			      <thead>
+			        <tr>
+			          <th style="width:37%;">Created At</th>
+			          <th>Headline</th>
+			          <th style="width:70%">Publisher</th>
+			          <th style="width:60%">Link to Original</th>
+			          <th style="width:60%">Frontend page</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr class="repeat-modify" ng-repeat="article in dashboard.items track by $id(article)" ng-click="dashboard.editArticle(article.$id)">
+			          <td>{{article.createdAt}}</td>
+			          <td><span ng-if="article.$id">{{article.headline}}</span></td>
+			          <td>{{article.publisher}}</td>
+			          <td ng-click="$event.stopPropagation()"><a ng-href="{{article.sourceLink}}"><span ng-if="article.$id" class="underline">Browse the original</span></a></td>
+			          <td ng-click="$event.stopPropagation()"><a ng-href="#!/articles/item/{{article.$id}}"><span ng-if="article.$id" class="underline">Go to article page</span></a></td>
+			        </tr>
+			      </tbody>
+			    </table>
+		        <ul ng-if="dashboard.pager.pages.length" class="pagination">
+		            <li class="waves-effect" ng-class="{disabled:dashboard.pager.currentPage === 1}">
+		                <a ng-click="dashboard.setPage(1)">First</a>
+		            </li>
+		            <li class="waves-effect" ng-class="{disabled:dashboard.pager.currentPage === 1}">
+		                <a ng-click="dashboard.setPage(dashboard.pager.currentPage - 1)">Previous</a>
+		            </li>
+		            <li class="waves-effect" ng-repeat="page in dashboard.pager.pages" ng-class="{active:dashboard.pager.currentPage === page}">
+		                <a ng-click="dashboard.setPage(page)">{{page}}</a>
+		            </li>               
+		            <li class="waves-effect" ng-class="{disabled:dashboard.pager.currentPage === dashboard.pager.totalPages}">
+		                <a ng-click="dashboard.setPage(dashboard.pager.currentPage + 1)">Next</a>
+		            </li>
+		            <li class="waves-effect" ng-class="{disabled:dashboard.pager.currentPage === dashboard.pager.totalPages}">
+		                <a ng-click="dashboard.setPage(dashboard.pager.totalPages)">Last</a>
+		            </li>
+		        </ul>
+		  </div>
+		  <div class="mdl-layout-spacer"></div>
+		</section>
+        </md-card-content>
+    </md-card>
+</div>

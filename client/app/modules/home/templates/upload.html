@@ -1,0 +1,12 @@
+<form name="upload.upload_form">
+  <div class="btn">
+    <input type="file" ngf-select ng-model="upload.file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="2MB"/>
+  </div>
+  Image thumbnail: <img style="width:100px;" ng-show="!!upload.file" ngf-thumbnail="upload.file"/>
+  <i ng-show="upload.upload_form.file.$error.required">*required</i><br>
+  <i ng-show="upload.upload_form.file.$error.maxSize">Image too large
+  {{upload.file.size / 1000000|number:1}}MB: max 2M</i>
+  <md-button class="md-raised md-primary" type="submit" ng-click="upload.submit()">Upload</md-button>
+  <span ng-show="!!upload.newFilename" image-link="{{upload.newFilename}}">The image has been uploaded.</span>
+  <br>
+</form>

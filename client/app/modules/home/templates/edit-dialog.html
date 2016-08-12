@@ -1,0 +1,54 @@
+<md-dialog aria-label="Article" style="min-width:60%;">
+    <form name="article.form" required>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Edit article</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="min-width:100%;max-width:900px;max-height:700px;" layout-gt-xs>
+            <div layout="column" ng-cloak class="md-inline-form">
+                <md-content layout-padding>
+                    <div>
+                        <md-input-container class="md-block">
+                          <label>Article headline</label>
+                          <input name="article.headline" ng-model="headline" ng-required="true">
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                          <label>Article content</label>
+                          <textarea name="article.content" ng-model="content" md-select-on-focus ng-required="true"></textarea>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                          <label>Publisher</label>
+                          <input name="article.publisher" ng-model="publisher" ng-required="true">
+                        </md-input-container>
+                        <md-input-container md-no-float class="md-block">
+                            <label>Source link</label>
+                          <input name="article.sourcelink" ng-model="sourceLink">
+                        </md-input-container>
+                        <!-- <md-input-container md-no-float class="md-block">
+                            <label>Image</label>
+                          <input name="article.imageLink" ng-model="imageLink">
+                        </md-input-container> -->
+                        <upload-dir ></upload-dir>
+                    </div>
+                </md-content>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-raised" ng-click="submit('The article has been edited')">
+                Submit
+            </md-button>
+            <md-button class="md-raised" ng-click="cancel()">
+                Cancel
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="delete('The articles has been deleted')" style="margin-right:5px;">
+                Delete
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

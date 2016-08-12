@@ -1,0 +1,29 @@
+<div layout="column" layout-align="center center" layout-fill ng-cloak style="position: absolute;">
+  <div class="loginBox md-whiteframe-11dp" layout="column">
+    <md-toolbar>
+      <h2 class="md-toolbar-tools">
+        <span>Register</span>
+      </h2>
+          <md-content class="md-padding" layout="column">
+            <md-input-container class="md-block input-form-height">
+              <label>Email Address</label>
+              <input required ng-model="registerForm.loginEmail" type="email" ng-required="true">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input-form-height">
+              <label>Password</label>
+              <input required ng-model="registerForm.loginPassword" type="password" ng-required="true">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input-form-height">
+            <label>Password Confirmation</label>
+              <input ng-model="registerForm.loginPasswordConfirm" type="password" ng-required="true">
+            </md-input-container>
+            <div layout="row" layout-align="center center">
+              <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+              <md-button class="md-raised md-primary" ng-disabled="!registerForm.loginEmail || !registerForm.loginPassword || !registerForm.loginPasswordConfirm" ng-model="loginForm.loginButton" ng-click="registerForm.regUser()">Register</md-button>
+              <md-button class="md-raised md-no-ink" ng-model="loginForm.registerButton" ng-click="registerForm.cancelRegister()">Cancel</md-button>
+            </section>
+            </div>
+          </md-content>
+    </md-toolbar>
+  </div>
+</div>

@@ -1,0 +1,436 @@
+body, md-content.md-blue-grey-theme {
+    background-color: #eee;
+}
+
+md-toolbar:not(.md-hue-1),
+    .md-fab {
+    fill: #fff;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color: rgb(68,108,179) !important;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+md-sidenav {
+    fill: #737373;
+}
+
+md-toolbar.md-tall {
+    height: 64px;
+    max-height: 64px;
+    min-height: 64px;
+} 
+
+code {
+  	color: #4285f4;
+  	-webkit-font-smoothing: auto;
+  	font-weight: 300;
+  	background-color: #F2F2F2;
+  	padding: 10px;
+}
+
+.text-center {
+	 text-align: center!important;
+     box-shadow: none;
+}
+
+tr {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none
+}
+
+.underline:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.center-progress-bar {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 0%;
+}
+
+.center-form-login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 45%;
+    border-radius: 4px;
+}
+
+.center-form-register {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 120%;
+    border-radius: 4px;
+}
+
+/* articles dashboard table */
+
+.mdl-data-table {
+    table-layout:fixed;
+    width:100%; 
+}
+
+#dashboard-table td, th {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+/* unrelated to responsive table css */
+
+#articles-table{
+    margin-top:10px;
+}
+
+.material-icons {
+    vertical-align: -25%;
+}
+
+.mdl-data-table th, td{
+    text-align: left !important;
+}
+
+.center{
+    text-align:center;
+}
+
+.pagination li.active {
+    background-color: grey !important;
+}
+
+.loginBox {
+  max-width:  90%;
+  width: 500px
+}
+
+.stretch input  {
+  width: 100%
+}
+
+.input-form-height {
+    max-height:50px;
+}
+
+
+/* articles.html */
+
+.grow:hover { 
+  transform: scale(1.1); 
+}
+
+.grow { 
+  transition: all .2s ease-in; 
+}
+
+.articles-main {
+  margin-top: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+.articles-container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
+
+.articles-content {
+  border-radius: 2px;
+  padding: 60px 56px;
+  margin-bottom: 60px;
+}
+
+.articles-layout.is-small-screen .articles-content {
+  padding: 40px 28px;
+}
+
+.articles-content h3 {
+  margin-top: 48px;
+}
+
+.headline-font {
+  color: white !important;
+  z-index:9;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  padding-bottom:6px !important;
+}
+
+.headline-font-background {
+  position:relative;
+  background-color:black;
+  opacity:0.5;
+  width:100%;
+  min-height:65px;
+}
+
+/* stick footer to the bottom */
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -180px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer {
+  height: 180px; 
+}
+.page-wrap:after {
+  height:150px;
+}
+
+
+/* media */
+
+.frameBasicClass {
+  /* For breakpoint `-xs` */
+  /* For breakpoint `-sm` */
+  /* For breakpoint `-md` */
+  /* For breakpoint `-gt-md` */ 
+}
+
+.frameBasicClass md-whiteframe {
+    background: #fff;
+    margin: 30px;
+    height: 100px; 
+}
+
+@media (max-width: 599px) {
+    .frameBasicClass md-whiteframe {
+      margin: 7px;
+      height: 50px;
+      background-color: #c8e4fa; 
+    }
+    .frameBasicClass md-whiteframe > span {
+      font-size: 0.4em; 
+    } 
+}
+  
+@media (min-width: 600px) and (max-width: 959px) {
+    .frameBasicClass md-whiteframe {
+      margin: 20px;
+      height: 75px; 
+    }
+    .frameBasicClass md-whiteframe > span {
+      font-size: 0.6em; 
+    } 
+}
+  
+@media (min-width: 960px) and (max-width: 1279px) {
+    .frameBasicClass md-whiteframe {
+      margin: 20px;
+      height: 90px;
+      background-color: #fcddde; 
+    }
+    .frameBasicClass md-whiteframe > span {
+      font-size: 0.9em; 
+    } 
+}
+  
+@media (min-width: 1280px) {
+    .frameBasicClass md-whiteframe {
+      margin: 25px;
+      height: 100px;
+      background-color: #F2FCE2; 
+    }
+    .frameBasicClass md-whiteframe > span {
+      font-size: 1.0em; 
+    } 
+}
+
+/* item.html */
+
+.article-item .item-inner {
+  max-width: 900px;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+.article-item .item-media {
+  box-sizing: border-box;
+  background-size: cover;
+  padding: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  cursor: pointer;
+}
+
+.article-item .item-media a, {
+  color: inherit;
+}
+
+.article-item .supporting-text {
+  width: 100%;
+  padding: 16px;
+  min-height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.article-item .supporting-text strong {
+  font-weight: 400;
+}
+
+.article-item .item-media ~ .supporting-text {
+  min-height: 64px;
+}
+
+.article-item .supporting-text:not(:last-child) {
+  box-sizing: border-box;
+  min-height: 76px;
+}
+
+.article-item .meta {
+  box-sizing: border-box;
+  padding: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: auto;
+}
+
+.article-item .meta > *:first-child {
+  margin-right: 16px;
+}
+
+.article-item .meta > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.article-item .mdl-card > a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.article-item .mdl-card h3 {
+  margin: 0;
+}
+
+.article-item .mdl-card h3 a {
+  text-decoration: none;
+}
+
+.article-item .mdl-card h3.quote:before, .article-item .mdl-card h3.quote:after {
+  display: block;
+  font-size: 3em;
+  margin-top: 0.5em;
+}
+
+.article-item .mdl-card h3.quote:before {
+  content: '“';
+}
+
+.article-item .mdl-card h3.quote:after {
+  content: '”';
+}
+
+.item-wrapper .item-inner > .mdl-card .item-media {
+  height: 280px;
+}
+
+.item-wrapper .meta > * {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-wrapper .meta + .supporting-text {
+  border: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.item-wrapper .meta + .supporting-text p {
+  width:90%;
+  margin: 16px auto;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* Fixes for IE 10 */
+.mdl-grid {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}

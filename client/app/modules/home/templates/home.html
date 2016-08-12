@@ -1,0 +1,66 @@
+<div layout="column" class="relative" layout-fill role="main" ng-cloak>
+    <md-toolbar ng-show="!showSearch">
+        <div class="md-toolbar-tools">
+            <a ng-href="/#!/"><h3>HEADliner</h3></a>
+            <span flex></span>
+            <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+                <ng-md-icon icon="search"></ng-md-icon>
+            </md-button>
+            <md-menu>
+                <md-button aria-label="Open Settings" ng-click="home.openMenu($mdOpenMenu, $event)">
+                    <md-icon> more_vert </md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item ng-if="home.isLoggedIn()">
+                        <md-button ng-click="home.addNewArticle($event)">
+                            <md-icon>note_add</md-icon>
+                            Add new article
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item ng-if="home.isLoggedIn()">
+                        <md-button href="" ng-href="/#!/dashboard" ng-click="home.goToDashboard($event)">
+                            <md-icon>view_list</md-icon>
+                            Dashboard
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item ng-if="home.isLoggedIn()">
+                        <md-button href="" ng-href="/#!/articles" ng-click="home.goToArticlesGrid($event)">
+                            <md-icon>view_module</md-icon>
+                            Articles
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider ng-if="home.isLoggedIn()"></md-menu-divider>
+                    <md-menu-item ng-if="home.isLoggedIn()">
+                        <md-button ng-click="home.logOut()">
+                            <md-icon>lock_open</md-icon>
+                            Logout
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item ng-if="!home.isLoggedIn()">
+                        <md-button ng-click="home.logIn()">
+                            <md-icon>lock_outline</md-icon>
+                            Login
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+    </md-toolbar>
+    <md-toolbar class="md-hue-1" ng-show="showSearch">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="showSearch = !showSearch" aria-label="Back">
+                <ng-md-icon icon="arrow_back"></ng-md-icon>
+            </md-button>
+            <h3 flex="10">
+                Back
+            </h3>
+            <md-input-container md-theme="input" flex>
+                <label>&nbsp;</label>
+                <input ng-model="search.who" placeholder="Search ...">
+            </md-input-container>
+        </div>
+    </md-toolbar>
+    <md-content layout="column" flex md-scroll-y style="background-color:#fff;">
+        <div ui-view autoscroll="true"></div>
+    </md-content>
+</div>

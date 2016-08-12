@@ -1,0 +1,57 @@
+<main class="articles-main">
+        <div class="articles-container mdl-grid">
+          <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="mdl-color--white content mdl-color-text--grey-800 mdl-cell mdl-cell--10-col page-wrap">
+	            <md-divider style="margin-top:10px;margin-bottom:10px;" ng-if="!item.loading"></md-divider>
+              <div layout="row" layout-align="center center" ng-if="item.loading">
+                <md-whiteframe class="md-whiteframe-11dp center-progress-bar" flex-sm="65" flex-gt-sm="55" flex-gt-md="45">
+                  <md-progress-linear md-mode="indeterminate"></md-progress-circular>
+                </md-whiteframe>
+              </div>
+              <div class="article-item item-wrapper mdl-js-layout" ng-if="!item.loading">
+                  <div class="item-inner mdl-grid">
+                      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+                        <div class="item-media mdl-color-text--grey-50" style="background-image: url('{{item.imageLink}}');">
+                          <h3 style="background-color:black;opacity:0.5;">{{item.headline}}</h3>
+                        </div>
+                        <div class="mdl-color-text--grey-700 supporting-text meta">
+                          <span>Created: {{item.createdAt}}</span>
+                          <span>Publisher: {{item.publisher}}</span>
+                        </div>
+                        <div class="mdl-color-text--grey-700 supporting-text">
+                          <p style="white-space:pre-line;text-align:justify;text-justify:inter-word;">
+                            {{item.content}}
+                          </p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div ng-if="!item.loading" style="margin-top:10px;">
+                <md-divider></md-divider>
+                  <div layout="row" layout-align="center center">
+                    <ul class="pagination">
+                      <li class="waves-effect">
+                          <a ng-href="/#!/"><i class="material-icons">chevron_left</i>Back to the main page</a>
+                      </li>
+                    </ul>
+                  </div>
+  	            <md-divider></md-divider>
+              </div>
+          	</div>
+        </div>
+        <footer class="page-footer site-footer" style="background-color:#6C7A89;" ng-if="!item.loading">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">NodeJS / AngularJS / Material</h5>
+                <p class="grey-text text-lighten-4">Demo resource for headlines presentation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 HEADliner
+            </div>
+          </div>
+        </footer>
+</main>

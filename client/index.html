@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="headliner">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<base href="/">
+	<title>HEADliner</title>
+	<meta name="description" content="Demo App" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes" />
+	<link rel="shortcut icon" href="app/assets/images/favicon.ico" />
+	<link rel="apple-touch-icon" href="app/assets/images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="app/assets/images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="app/assets/images/apple-touch-icon-114x114.png" />
+	<!-- injector:css -->
+	<link rel="stylesheet" href="/src/bower_components/angular-material-icons/angular-material-icons.css">
+	<link rel="stylesheet" href="/src/bower_components/angular-material/angular-material.css">
+	<!-- endinjector -->
+    <link rel="stylesheet" href="app/assets/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.green-light_green.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</head>
+<body ng-cloak>
+
+<!--Beginning-->
+<div ui-view layout="row" layout-fill autoscroll="true"></div>
+<!--End-->
+
+<!-- injector:js -->
+<script src="/src/bower_components/es5-shim/es5-shim.js"></script>
+<script src="/src/bower_components/json3/lib/json3.min.js"></script>
+<script src="/src/bower_components/angular/angular.js"></script>
+<script src="/src/bower_components/angular-aria/angular-aria.js"></script>
+<script src="/src/bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="/src/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="/src/bower_components/angular-animate/angular-animate.js"></script>
+<script src="/src/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="/src/bower_components/angular-resource/angular-resource.js"></script>
+<script src="/src/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="/src/bower_components/angular-messages/angular-messages.js"></script>
+<script src="/src/bower_components/angular-material/angular-material.js"></script>
+<script src="/src/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/src/bower_components/lodash/lodash.js"></script>
+<script src="/src/bower_components/firebase/firebase.js"></script>
+<script src="/src/bower_components/angularfire/dist/angularfire.js"></script>
+<script src="/src/bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="/app/Headliner.js"></script>
+<script src="/app/HeadlinerConfig.js"></script>
+<script src="/app/modules/home/HomeRouteConfig.js"></script>
+<script src="/app/modules/database/models/ArticlesModel.js"></script>
+<script src="/app/modules/frontend/controllers/ArticlesCtrl.js"></script>
+<script src="/app/modules/frontend/controllers/ItemCtrl.js"></script>
+<script src="/app/modules/home/controllers/DashboardCtrl.js"></script>
+<script src="/app/modules/home/controllers/HomeCtrl.js"></script>
+<script src="/app/modules/home/controllers/UploadCtrl.js"></script>
+<script src="/app/modules/user/controllers/LoginCtrl.js"></script>
+<script src="/app/modules/user/controllers/RegisterCtrl.js"></script>
+<script src="/app/modules/database/services/EndpointConfigService.js"></script>
+<script src="/app/modules/database/services/UtilsService.js"></script>
+<script src="/app/modules/home/services/DashboardService.js"></script>
+<script src="/app/modules/home/services/HomeService.js"></script>
+<script src="/app/modules/home/services/PagerService.js"></script>
+<script src="/app/modules/user/services/AuthRoutService.js"></script>
+<script src="/app/modules/user/services/AuthService.js"></script>
+<script src="/app/modules/user/services/UserService.js"></script>
+<script src="/app/modules/frontend/directives/BackTopDirective.js"></script>
+<script src="/app/modules/home/directives/UploadDirective.js"></script>
+<!-- endinjector -->
+
+
+</body>
+</html>
